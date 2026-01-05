@@ -15,6 +15,38 @@ public class PalindromeCheckerTest {
         boolean result = PalindromeChecker.isPalindrome("anna");
         assertTrue(result);
     }
+    @Test
+    public void isPalindromeTest_emptyString() {
+        boolean result = PalindromeChecker.isPalindrome("");
+        assertTrue(result);
+    }
+    @Test
+    public void isPalindromeTest_nullTest() {
+        boolean result = PalindromeChecker.isPalindrome(null);
+        assertFalse(result);
+    }
+    @Test
+    public void isPalindromeTest_lowerAndUpperCaseTest() {
+        boolean result = PalindromeChecker.isPalindrome("oTtO");
+        assertTrue(result);
+    }
+    @Test
+    public void isPalindromeTest_ignoreSpace() {
+        boolean result = PalindromeChecker.isPalindrome("ot  to");
+        assertTrue(result);
+    }
+    @Test
+    public void isPalindromeTest_considerNumbers() {
+        boolean result = PalindromeChecker.isPalindrome("o2tt2o");
+        assertTrue(result);
+    }
+    @Test
+    public void isPalindromeTest_considerPunctuationMarks() {
+        boolean result = PalindromeChecker.isPalindrome("o,.tt.,o");
+        assertTrue(result);
+    }
+
+
 
     // TODO: weitere Testfälle ergänzen
 }

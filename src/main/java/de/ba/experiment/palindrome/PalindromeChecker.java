@@ -15,6 +15,27 @@ public class PalindromeChecker {
 
     public static boolean isPalindrome(String text) {
         // TODO: implementieren
-        return false;
+        // Null ist laut Test kein Palindrom
+        if (text == null) {
+            return false;
+        }
+
+        // Leerzeichen entfernen und alles in Kleinbuchstaben umwandeln
+        String normalized = text
+                .replace(" ", "")
+                .toLowerCase();
+
+        int left = 0;
+        int right = normalized.length() - 1;
+
+        while (left < right) {
+            if (normalized.charAt(left) != normalized.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
     }
 }
