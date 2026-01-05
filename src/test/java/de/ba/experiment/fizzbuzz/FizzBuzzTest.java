@@ -15,6 +15,43 @@ public class FizzBuzzTest {
         String[] result = FizzBuzz.fizzBuzz(1);
         assertArrayEquals(new String[]{"1"}, result);
     }
+    @Test
+    public void fizzBuzzTest_arrayLengthCorrect(){
+        String[] result = FizzBuzz.fizzBuzz(100);
+        int length_result = result.length;
+        assertEquals(100, length_result);
+    }
 
+    @Test
+    public void fizzBuzzTest_divisibleByThree(){
+        String[] result = FizzBuzz.fizzBuzz(3);
+        assertArrayEquals(new String[]{"1", "2", "Fizz"}, result);
+    }
+    @Test
+    public void fizzBuzzTest_divisibleByFive(){
+        String[] result = FizzBuzz.fizzBuzz(5);
+        assertArrayEquals(new String[]{"1", "2", "Fizz", "4", "Buzz"}, result);
+    }
+    @Test
+    public void fizzBuzzTest_divisibleByThreeAndFive(){
+        String[] result = FizzBuzz.fizzBuzz(15);
+        String[] expected = {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"};
+        assertArrayEquals(expected, result);
+    }
+    @Test
+    public void fizzBuzzTest_onlyNumberAsString() {
+        String[] result = FizzBuzz.fizzBuzz(2);
+        assertArrayEquals(new String[]{"1", "2"}, result);
+    }
+    @Test
+    public void fizzBuzzTest_zeroTest(){
+        String[] result = FizzBuzz.fizzBuzz(0);
+        assertArrayEquals(new String[0], result);
+    }
+    @Test
+    public void fizzBuzzTest_negativeTest(){
+        String[] result = FizzBuzz.fizzBuzz(-2);
+        assertArrayEquals(new String[0], result);
+    }
     // TODO: weitere Tests schreiben
 }
